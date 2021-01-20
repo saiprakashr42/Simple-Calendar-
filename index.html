@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calendar">
+      <p id="month_Name"></p>
+      <p id="day_Name"></p>
+      <p id="day_Number"></p>
+      <p id="year"></p>
+    </div>
+    <script>
+      //to get default language of the browser
+      const lang = navigator.language;
+
+      //Date
+      var date = new Date();
+
+      var dayNumber = date.getDate();
+      var year = date.getFullYear();
+      var month = date.getMonth();
+
+      //getting month & Day Name in terms of a string
+      var monthName = date.toLocaleString(lang, { month: "long" });
+      var DayName = date.toLocaleString(lang, { weekday: "long" });
+
+      document.getElementById("day_Number").innerHTML = dayNumber;
+
+      document.getElementById("month_Name").innerHTML = monthName;
+
+      document.getElementById("day_Name").innerHTML = DayName;
+
+      document.getElementById("year").innerHTML = year;
+    </script>
+  </body>
+</html>
